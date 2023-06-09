@@ -90,3 +90,40 @@ function carousel() {
     x[myIndex - 1].style.display = "block";
     setTimeout(carousel, 2000); // Change image every 2 seconds
 }
+
+// 圖表
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: ['程式學習', '睡覺', '生理機能', '英文',],
+        datasets: [{
+            label: '花費時數',
+            data: [10, 8, 4, 2],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(75, 192, 192)',
+                'rgb(255, 205, 86)',
+                'rgb(201, 203, 207)',
+                'rgb(54, 162, 235)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+
+
+
+
