@@ -32,9 +32,9 @@ header h1 {
     transition: all .5s ease;
 }
 
-header:hover h1 {
+/* header:hover h1 {
     translate: 0px -20px;
-}
+} */
 
 .w3-animate-opacity {
     animation: opac 0.8s;
