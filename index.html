@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楊于葳的前端申請問答</title>
+    <link rel="shortcut icon" href="./wehelp.png" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <!-- style.css -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- w3.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-dark text-center">
+        <div class="container">
+            <h1 class="w3-center w3-animate-opacity" style="color: #E4FBFF">
+                <img src="./wehelp.png" height="65" alt=""> WeHelp Bootcamp
+            </h1>
+            <h2 style="color: #E4FBFF">楊于葳的前端申請問答</h2>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>1. 兩百字內的個人簡介。</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>在輸入您的名字後，會與您打招呼，並顯示于葳的個人簡介：</p>
+                            <form id="introForm">
+                                <input id="introName" type="text" class="form-control mb-3" placeholder="請在此填入您的名字"
+                                    required>
+                                <button id="introBtn" class="btn btn-warning w-100">👤 顯示于葳的個人簡介</button>
+                            </form>
+                            <div id="introOutput"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>2. 為了成為軟體工程師，曾做過什麼努力？若有具體專案作品請分享給我們。</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>為了成為軟體工程師，我把握每一個與軟體工程師朋友們交流的機會，也找機會參訪軟體公司（Palo
+                                Alto、<a href="https://www.facebook.com/ywyang236/posts/pfbid065p9Scn7Lu2ukJ6e7CgtBLFNyK5MuQ7RvM8iaFhQToFynVK6Gokn7JuoAz35iRqzl
+                                " target="_blank" rel="noopener">Facebook 加州總部</a>、
+                                <a href="https://www.facebook.com/ywyang236/posts/pfbid0Zq2QWASLi5HKd3mHBGuPYu5ugPuqLbnYvFTmgUyo18CsTab5ZjhD6ky2ZhbkUEb4l"
+                                    target="_blank" rel="noopener">Meta台灣分部</a>
+                                ），到台大資訊系統訓練班上課等，確定這個領域是適合自己的，接著開始找各種機會實作。<br><br>
+                                起初是在個人部落格設計線上圖鑑（<a href="https://ywyang236.blogspot.com/p/maker.html" target="_blank"
+                                    rel="noopener">科學Maker</a>、<a href="https://ywyang236.blogspot.com/2021/12/20.html"
+                                    target="_blank" rel="noopener">水族箱微生物圖鑑</a>），幫助有需求的人，再來是<a
+                                    href="https://github.com/ywyang236/Anki_Canbridge_zhtw" target="_blank"
+                                    rel="noopener">使用 JavaScript 設計特殊的 Anki
+                                    製卡規則</a>，幫助自己快速的建立英文卡片、使用 next.js 框架與 Firestore Database 做出可由後台控制購物內容與價格的網頁、使用
+                                react.js
+                                框架做出簡單的網頁、使用 LocalStorage
+                                API 做出可記憶的待辦事項網頁。<br><br>
+                                雖然目標是成為前端工程師，但希望能做出一款 App 證明自己的能力，所以看書自學
+                                Swift，並把學習過程<a href="https://ywyang236.blogspot.com/2023/04/ios-12-app30ios-app.html"
+                                    target="_blank"
+                                    rel="noopener">記錄在部落格裡面</a>。不同於授課，看書能確保自己的思考路徑不被影響，有問題就問ChatGPT，或者是查資料，跟著書本<a
+                                    href="https://ywyang236.blogspot.com/2023/04/chapter-04-ui.html" target="_blank"
+                                    rel="noopener">做出簡單的 App
+                                </a>
+                                。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>2-1. Meta 公司參訪照片</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="imageSelector" class="form-label">選擇圖片</label>
+                                <select id="imageSelector" class="form-control">
+                                    <option value="Facebook-1">加州Facebook總部</option>
+                                    <option value="Facebook-2">加州Facebook的全球即時使用量看板</option>
+                                    <option value="Facebook-3">加州Facebook戶外用餐區</option>
+                                    <option value="Facebook-tw-1">台灣Meta</option>
+                                    <option value="Facebook-tw-2">台灣Meta珍珠奶茶室</option>
+                                    <option value="Facebook-tw-3">台灣Meta沙發區</option>
+                                </select>
+                            </div>
+                            <p>預覽圖片</p>
+                            <img src="./images/Facebook-1.jpeg" alt="" id="imagePreview" class="w-100 rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>3. 如果參與這個計畫，會怎麼安排學習時間？</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>我是全職學習者，目前沒有任何工作，若是錄取會把 WeHelp 列為人生第一優先事項，參加所有的實體活動與 WeHelp
+                                成員們積極互動。<br><br>過去一個多月，醒來後除了維持生理機能，幾乎每天會花 8～10
+                                小時浸泡在資工領域，像是學習資工技能（在台大上課、Udemy
+                                課程等），了解資工社群（Stack Overflow、reddit 等），以及參加實體活動（參加資安展覽、Copilot
+                                講座等）。如果當天有移動，會利用通勤時間閱讀與資工職涯相關的書籍。<br><br>
+                                雖然每天 8～10 小時學習看起來好像很多，但實際上進展卻相當緩慢，就算影片都 2x 觀看，也是要花不少時間，特別是獨立實作的時候。例如：這次提供的<a
+                                    href="https://ywyang236.blogspot.com/p/wehelp.html" target="_blank"
+                                    rel="noopener">履歷</a>，是使用
+                                blogger 頁面建立表格，為了能讓不同區塊的內容能整齊排列，使用手機介面還要可以自動換行，花了好幾天測試才有一點點成果。<br><br>
+                                除此之外，每天會花 1～2 小時，使用 Native Camp 平台與外師學習英文，希望能擁有不使用翻譯軟體，就能快速閱讀技術文件的能力。<br><br>
+                                若參與這個計畫，學習時間會比照目前的模式微調。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>3-1. 時間分配圖</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                            <script>
+                                const ctx = document.getElementById('myChart');
+
+                                new Chart(ctx, {
+                                    type: 'polarArea',
+                                    data: {
+                                        labels: ['程式學習', '睡覺', '生理機能', '英文',],
+                                        datasets: [{
+                                            label: '花費時數',
+                                            data: [10, 8, 4, 2],
+                                            backgroundColor: [
+                                                'rgb(255, 99, 132)',
+                                                'rgb(75, 192, 192)',
+                                                'rgb(255, 205, 86)',
+                                                'rgb(201, 203, 207)',
+                                                'rgb(54, 162, 235)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        indexAxis: 'y',
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>4. 是否有想要加入的軟體公司？為什麼想加入該公司？</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>我希望能加入美商浪橋科技股份有限公司（Splashtop
+                                Inc.）的台北研發中心，產品為使用先進影音串流技術進行：遠端桌面搖控，一對多視訊會議及行動裝置畫面鏡射等應用，橫跨多平台（Windows, Mac OS,
+                                iOS, Android），在科技界及教育界均有高知名度。<br><br>
+
+                                希望能加入的原因如下：<br>
+                                　　1、加入軟體公司，有正規的團隊能互相學習，增加深入學習不同技術的機會。<br>
+                                　　2、選擇外商公司，是為了未來到海外軟體公司就業的準備，美商尤其是首選。<br>
+                                　　3、目前這家公司正在招募前端工程師，條件完全符合我目前的學習進程。<br>
+                            </p>
+                            <div class="midd" style="text-align: center;">
+                                <img class=" w3-round" style="width:100%" src="./images/Splashtop-2.jpeg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>4-1. 前端工程師招募條件</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <div class="midd" style="text-align: center;">
+                                <img class=" w3-round" style="width:100%" src="./images/Splashtop-1.jpeg">
+                            </div>
+                            <p>前端工程師團隊將根據不同產品線的需求，與專案經理、產品設計師、後端工程師通力合作，實現新的設計、完成功能的實作與改善用戶體驗，包含各種權限管理以及批量操作，處理記錄呈現和視覺化的工作。<br><br>
+                                應徵條件：<br>
+                                　- 經驗不拘<br>
+                                　- 使用 React 和 Typescript<br>
+                                　- 日常 Git 工具操作<br>
+                                　- 能夠串接 RESTful API<br>
+                                　- HTML、CSS、Javascript 有實務見解</p><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>5-1. 心理相關書籍</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <div class="w3-content w3-section" style="max-width:500px">
+                                <img class="mySlides2" src="images/book-1.jpeg" style="width:100%">
+                                <img class="mySlides2" src="images/book-2.jpeg" style="width:100%">
+                                <img class="mySlides2" src="images/book-3.jpeg" style="width:100%">
+                                <img class="mySlides2" src="images/book-4.jpeg" style="width:100%">
+                                <img class="mySlides2" src="images/book-5.jpeg" style="width:100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>5. 請描述一件讓你產生明顯負面情緒的事情，你如何處理該情緒？</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>
+                                我是個高度敏感的人，對情緒的反應也很敏銳，也曾經歷「情緒處理撞壁」很長一段時間，而「轉移注意力、接觸人群」對我來說很有效。為了能用不傷害他人的方式，面對他人的負面情緒帶給我的影響，我付費聽了蔡康永的201堂情商課（喜馬拉雅），又看了許多心理相關的書籍，像是<a
+                                    href="https://ywyang236.blogspot.com/2020/04/covid-19.html" target="_blank"
+                                    rel="noopener">《誰搬走了我的乳酪》</a>、《情緒勒索》、《也許你該找人聊聊》、《情緒的解剖圖鑑》等，從中找方法，很積極的去認識情緒，以及找出合適的解決方法。<br><br>
+                                以我個人的例子來說，大四上學期，未來規劃產生劇烈變動，產生長達半年的消極情緒，當時的解決方法是轉移注意力，去接觸人群，不要讓自己對生活完全絕望，所以到學校的通識中心當工讀生、當助教，在大四畢業前重新找回對人生的希望。<br><br>
+                                第二個例子，是因為疫情導致公司虧損半年，資遣85%的員工後辦理歇業，很長一段時間沒有收入，產生巨大的自我懷疑，長達一年走不出負面情緒，甚至逃離都市住到鄉下田邊。後來，將注意力轉移到養水族寵物「米蝦」上，這是一種小型的彩色觀賞蝦，每天花
+                                6～8 小時坐在水族箱前面盯著蝦看，並加入觀賞蝦社群<a
+                                    href="https://ywyang236.blogspot.com/2021/08/blog-post_29.html" target="_blank"
+                                    rel="noopener">分享相關知識</a>，獲得米蝦養殖專家的肯定、水族社群的肯定，從中找到成就感，這才重新拿回人生的主導權，承認過去的失敗，冷靜地分辨可控與不可控的失敗成因。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>6. 關於這份申請網頁，請分享一個你開發時的技術心得。</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>
+                                我想分享「相冊功能」的開發過程與心得。<br><br>
+                                一開始只是想展示幾張照片自動輪播，完成後看起來過於簡單，想讓使用者能左右滑動照片，所以又找了第二個版本，也成功設計出理想中的樣式，但又感覺不太滿足，希望能同時顯示文字，這才確定最後的版本。<br><br>
+                                因為是第一次把 Slideshow
+                                塞進卡片裡，要兼顧內外版型，又要讓功能正常發揮，所以花很多時間調整。從發想到測試成功，換其他方法後再測試，一直到最後一版的完成，4～5
+                                小時就這樣不見了，期間執著到忘記吃午餐，為了身體著想不得不趕快去吃晚餐，又趕回來完成後續。<br><br>
+                                每個「第一次」都特別花時間，但第二次開始就能在幾分鐘內快速完成想要的效果，一直摸索改動的過程是很令人開心的，雖然只是個小東西，但透過實作又學到了很多該注意的地方，像是：有記得到
+                                cdn.js 找 w3-css 的 script 連結、把 script
+                                放到正確的位置、盡量讓每張照片的副檔名一致比較好引用，以及使用這些模板工具的時候，一定要有耐心的閱讀網站的英文解釋，每一個字都有其存在的意義。<br><br>
+                                我在今年四月，完成人生第一篇技術分享的文章（<a href="https://ywyang236.blogspot.com/2023/04/blogger.html"
+                                    target="_blank" rel="noopener">在 Blogger 使用響應式表格的方法</a>），接下來也會持續分享。
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>7. 從上次提出申請至今，多做了哪些努力？( 第一次申請不用回答 )</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>這是第一次申請 WeHelp。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>8. 其他想要對我們說的事情？</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p>
+                                我預計在年底前完成一款名叫「觀察記錄簿」的 App，這是一款為科學 Maker 社團（全台灣最大的科學社團，目前有 8.3 萬人）的科學儀器而設計的 App。<br><br>
+                                規劃使用 Python 訓練 VGG16 深度學習模型辨識比例尺，在 React Native 框架串連此
+                                api，讓手機鏡頭在手機顯微鏡的視野下，擁有自動辨識倍率的功能，並且可以幫照片增加自定義浮水印與 CC 授權浮水印功能。<br><br>
+                                目前剛確認計畫的可行性，以及簡單畫出 App 的 icon 樣式，也透過 YouTube 影片了解訓練的操作過程，以及透過 Udemy
+                                課程了解 React 框架，下個階段會開始訓練此 App
+                                的核心技能「辨識比例尺」，開始拍一萬張照片，一層一層的建立 VGG16 模型。<br><br>
+                                回顧過往的經驗，我是屬於實作能力優於理論能力的人，執行能力很強，再加上這段時間密集接觸程式語言，相當確定成為軟體工程師確實能發揮此優勢。另一個優勢，在於我是一個很願意為團體、為社團貢獻的人，很期待能加入
+                                WeHelp，和一群有共同目標的人一起交流，為團體貢獻一份心力。
+                            </p><br>
+                            <div class="w3-light-grey">
+                                <div id="myBar" class="w3-container w3-green w3-center" style="width:20%">20%</div>
+                            </div>
+                            <br>
+                            <button class="btn btn-warning w-100" onclick="move()">🚀 年底前一定會完成這個 App 的！Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>8-1. 手機顯微鏡</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="w3-display-container">
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-1.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        手機顯微鏡
+                                    </div>
+                                </div>
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-2.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        研究型手機顯微鏡
+                                    </div>
+                                </div>
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-3.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        偏光模組：草酸鈣結晶
+                                    </div>
+                                </div>
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-4.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        金相模組：蟎蟲
+                                    </div>
+                                </div>
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-5.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        螢光模組：水綿
+                                    </div>
+                                </div>
+
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-6.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        藍螢光模組
+                                    </div>
+                                </div>
+
+
+                                <div class="w3-display-container mySlides">
+                                    <img src="./images/Scimage-7.jpeg" style="width:100%">
+                                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-14 w3-black">
+                                        紫螢光模組
+                                    </div>
+                                </div>
+
+                                <button class="btn w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                                <button class="btn w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>8-2. 觀察記錄簿 App 的 icon</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <img class=" w3-round" style="width:100%" src="./images/icon.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>8-3. 觀察記錄簿 App 預期的功能</h3>
+                        </div>
+                        <div class="card-body" style="text-align:justify">
+                            <p> • 使用 React Native 框架<br>
+                                • 幫照片增加自定義浮水印與 CC 浮水印功能<br>
+                                • 以 Python 訓練 VGG16 模型辨識特殊規格比例尺 (1黑+1白 = 0.5 mm)<br>
+                                • 以 Python 訓練 VGG16 模型辨識常規物鏡測微尺 (1 DIV = 0.01 mm)<br>
+                                • 建立手機顯微鏡自動辨識倍率功能</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="text-center">
+            <p>Copyright &copy;2023 <a target="_blank" rel="noopener"
+                    href="https://github.com/andy19910102/csie-f2e-js-basic-data-types">
+                    Github Repository <i class="fa-brands fa-github-alt"></i></a> </p>
+        </footer>
+        <!-- footer end -->
+        <!-- w3.js -->
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <!-- bootstrap.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- main.js -->
+        <script src="./javascripts/main.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+header {
+    padding: 180px 0px;
+    background-image: url("/images/dark.png");
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+
+header:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 52px;
+    text-shadow: 2px 2px 0px #00000080;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    transition: all .5s ease;
+}
+
+header:hover h1 {
+    translate: 0px -20px;
+}
+
+.w3-animate-opacity {
+    animation: opac 0.8s;
+}
+
+@media (min-width: 576px) {
+    .card {
+        min-height: 100%;
+    }
+
+    .card-body {
+        min-height: 100%;
+        flex: 1;
+    }
+}
+
+.number-symbol {
+    width: fit-content;
+    padding: 0px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+
+/* 這將改變所有超連結的顏色和移除底線 */
+a {
+    text-decoration: none;
+    /* 移除超連結的底線 */
+}
+
+/* 超連結顏色設定 */
+/* 尚未訪問的超連結的顏色 */
+a:link {
+    color: #c62d2d;
+}
+
+/* 已訪問的超連結的顏色 */
+a:visited {
+    color: #248a9e;
+}
+
+/* 當滑鼠懸停在超連結上時的顏色 */
+a:hover {
+    color: #2ed6d0;
+}
+
+/* 當超連結被點擊時的顏色 */
+a:active {
+    color: #ca7e2c;
+}
