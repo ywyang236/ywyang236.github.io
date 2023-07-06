@@ -1,0 +1,234 @@
+body {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.NavItem {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-weight: 0;
+    margin-right: 20px;
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .NavItem {
+        background-color: rgb(69, 156, 233);
+        width: 50vw;
+        height: 100%;
+        display: block;
+        position: fixed;
+        left: 100vw;
+        background-color: rgba(223, 122, 122, 0);
+    }
+}
+
+.ItemWrapper {
+    display: flex;
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .ItemWrapper {
+        display: block;
+        height: 100vh;
+        background-color: rgb(154, 208, 255);
+    }
+}
+
+.NavItem:target {
+    left: 0;
+    padding-left: 50vw;
+}
+
+.NavSlogan {
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.HamburgerIcon img {
+    max-height: 100%;
+}
+
+.HamburgerIcon {
+    display: none;
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .HamburgerIcon {
+        display: block;
+    }
+}
+
+.NavItem .Item {
+    display: block;
+    margin-left: 20px;
+    font-weight: 0;
+}
+
+.Carousel {
+    width: 100%;
+    height: 250px;
+    background-color: #E4F0F8;
+    text-align: center;
+    line-height: 250px;
+    font-size: 2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.Content {
+    margin: 0px;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+    .Content {
+        margin: 0px auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .Content {
+        margin: 0px auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.Top1 {
+    width: calc(30% - 20px);
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    background-color: #E4F0F8;
+}
+
+.Top2 {
+    width: calc(30% - 20px);
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    background-color: #E4F0F8;
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+    .Top1 {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .Top2 {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .Top1 {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .Top2 {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+}
+
+.Card {
+    width: calc(15% - 20px);
+    margin: 10px;
+    position: relative;
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+    .Card {
+        width: calc(25% - 20px);
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .Card {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+}
+
+.Image-container {
+    overflow: hidden;
+}
+
+.Top1 .Image-container {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Top2 .Image-container {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Card .Image-container {
+    width: 100%;
+    height: 150px;
+}
+
+.MushroomIcon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.MushroomIcon img {
+    height: 20px;
+}
+
+.Title {
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    background-color: rgba(117, 117, 117, 0.458);
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.Context {
+    margin: auto 10px;
+}
