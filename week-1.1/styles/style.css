@@ -33,11 +33,13 @@ body {
         position: fixed;
         left: 100vw;
         background-color: rgba(223, 122, 122, 0);
+        z-index: 9999;
     }
 }
 
 .ItemWrapper {
     display: flex;
+    position: relative;
 }
 
 @media (max-width: 600px) and (min-width: 360px) {
