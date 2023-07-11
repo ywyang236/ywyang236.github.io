@@ -1,3 +1,5 @@
+print("=== Task 1 ===")
+
 def find_and_print(messages):
     for key, message in messages.items():
         # 判斷條件一：包含 "student" 和 "college"
@@ -27,7 +29,7 @@ find_and_print({
 })
 
 
-print("=========")
+print("=== Task 2 ===")
 
 
 def calculate_sum_of_bonus(data):
@@ -50,7 +52,6 @@ def calculate_sum_of_bonus(data):
 
         bonus_amount = salary * bonus_percentage
         sum_of_bonus += bonus_amount
-        print(employee["name"] + ": " + str(bonus_amount))
     print("Total Bonus:", sum_of_bonus)
 
 
@@ -87,7 +88,7 @@ calculate_sum_of_bonus({"employees": [
 })  # call calculate_sum_of_bonus function
 
 
-print("=========")
+print("=== Task 3 ===")
 
 
 def func(*data):
@@ -114,7 +115,7 @@ func("郭靜雅", "王立強", "林靜宜", "郭立恆", "林花花")  # print �
 func("郭宣雅", "林靜宜", "郭宣恆", "林靜花")  # print 沒有
 
 
-print("=========")
+print("=== Task 4 ===")
 
 
 def get_number(index):

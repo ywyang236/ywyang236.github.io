@@ -80,6 +80,9 @@
         }
     </style>
     <script>
+
+        console.log('--- Task 1 ---');
+
         function findAndPrint(messages) {
         } findAndPrint({
             "Bob": "My name is Bob. I'm 18 years old.",
@@ -114,7 +117,7 @@
             }
         }
 
-        console.log('------------------');
+        console.log('--- Task 2 ---');
 
         function calculateSumOfBonus(data) {
             let sumOfBonus = 0;
@@ -132,7 +135,6 @@
                 } else if (performance === 'below average') {
                     bonusPercentage = 0.03;
                 }
-                console.log(employee.name + ' bonus: ' + salary * bonusPercentage);
                 const bonusAmount = salary * bonusPercentage;
                 sumOfBonus += bonusAmount;
             });
@@ -174,7 +176,7 @@
 
 
 
-        console.log('------------------');
+        console.log('--- Task 3 ---');
 
         function func(...data) {
             // 檢查每個字串的第二個字中間是否重複，印出沒有重複的那一個字串
@@ -203,7 +205,7 @@
         func("郭靜雅", "王立強", "林靜宜", "郭立恆", "林花花"); // print 林花花
         func("郭宣雅", "林靜宜", "郭宣恆", "林靜花"); // print 沒有
 
-        console.log('------------------');
+        console.log('--- Task 4 ---');
 
         function getNumber(index) {
             let odd = 3;
@@ -225,7 +227,6 @@
         getNumber(5); // print 10 
         getNumber(10); // print 15
 
-        console.log('------------------');
 
 
     </script>
