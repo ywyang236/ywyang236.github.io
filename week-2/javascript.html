@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Week 2</title>
+    <link rel="shortcut icon" href="./wehelp.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="Carousel">
+        <img style="width: 100%;" src="./WeHelp Bootcamp_003.jpeg" alt="wehelp">
+        <h3 class="Title">WeHelp Bootcamp</h3>
+    </div>
+
+    <div class="Container">
+        <div class="Context">
+            <h3>第一階段：網站開發基礎</h3>
+            <h4>每週安排大綱</h4>
+            <ul>
+                <li>Week 1：HTML、CSS、RWD 切版實務</li>
+                <li style="color: #8C1A11; font-weight: bold; background-color: rgb(224, 224, 224);">Week
+                    2：JavaScript、Python 基本練習</li>
+                <li>Week 3：JavaScript、Python 網路連線與資料運用</li>
+                <li>Week 4：架設 Flask 網站後端伺服器</li>
+                <li>Week 5：架設 MySQL 資料庫伺服器</li>
+                <li>Week 6：基礎會員系統開發</li>
+                <li>Week 7：前端 AJAX、後端 API 整合功能開發</li>
+                <li>Week 8：主題學習，實體活動，轉職經驗分享</li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-size: 20px;
+            margin: 0px;
+        }
+
+        .Title {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+        .Carousel {
+            width: 100%;
+            height: 250px;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 1.8em;
+            color: white;
+            position: relative;
+        }
+
+        .Container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .Content {
+            margin: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function findAndPrint(messages) {
+        } findAndPrint({
+            "Bob": "My name is Bob. I'm 18 years old.",
+            "Mary": "Hello, glad to meet you.",
+            "Copper": "I'm a college student. Nice to meet you.",
+            "Leslie": "I am of legal age in Taiwan.",
+            "Vivian": "I will vote for Donald Trump next week",
+            "Jenny": "Good morning."
+        });
+
+        function findAndPrint(messages) {
+            for (var key in messages) {
+                if (messages.hasOwnProperty(key)) {
+                    var message = messages[key];
+                    // 如果 message 裡面包涵 student 和 college 這個字，就印出名字
+                    if (message.includes("college") && message.includes("student")) {
+                        console.log(key);
+                    }
+                    // 如果 message 裡面包涵 18 years old 這個字，就印出名字
+                    else if (message.includes("18 years old")) {
+                        console.log(key);
+                    }
+                    // 如果 message 裡面包涵 vote 這個字，就印出名字
+                    else if (message.includes("vote")) {
+                        console.log(key);
+                    }
+                    // 如果 message 裡面包涵 legal age 這個字，就印出名字
+                    else if (message.includes("legal age")) {
+                        console.log(key);
+                    }
+                }
+            }
+        }
+
+        console.log('------------------');
+
+        function calculateSumOfBonus(data) {
+            let sumOfBonus = 0;
+
+            // 根據每個員工的表現和薪水計算 bonus
+            data.employees.forEach(employee => {
+                const salary = convertSalaryToTWD(employee.salary);
+                const performance = employee.performance;
+                let bonusPercentage = 0;
+
+                if (performance === 'above average') {
+                    bonusPercentage = 0.12;
+                } else if (performance === 'average') {
+                    bonusPercentage = 0.08;
+                } else if (performance === 'below average') {
+                    bonusPercentage = 0.03;
+                }
+                console.log(employee.name + ' bonus: ' + salary * bonusPercentage);
+                const bonusAmount = salary * bonusPercentage;
+                sumOfBonus += bonusAmount;
+            });
+
+            console.log('Total Bonus: ' + sumOfBonus);
+        }
+
+        // 將 salary 統一格式，預設數值是新台幣
+        function convertSalaryToTWD(salary) {
+            // 如果出現美金USD，就用1:30換算
+            if (typeof salary === 'string' && salary.includes('USD')) {
+                return parseInt(salary) * 30;
+            }
+            // 如果出現 , ，就把格式轉成數字
+            else if (typeof salary === 'string' && salary.includes(',')) {
+                return parseInt(salary.replace(',', ''));
+            }
+            return salary;
+        }
+
+        calculateSumOfBonus({
+            "employees": [{
+                "name": "John",
+                "salary": "1000USD",
+                "performance": "above average",
+                "role": "Engineer"
+            }, {
+                "name": "Bob",
+                "salary": 60000,
+                "performance": "average",
+                "role": "CEO"
+            }, {
+                "name": "Jenny",
+                "salary": "50,000",
+                "performance": "below average",
+                "role": "Sales"
+            }]
+        }); // call calculateSumOfBonus function
+
+
+
+        console.log('------------------');
+
+        function func(...data) {
+            // 檢查每個字串的第二個字中間是否重複，印出沒有重複的那一個字串
+            for (let i = 0; i < data.length; i++) {
+                const str = data[i];
+                const middleChar = str[1];
+                // 比較不同字串的第二個字是否相同
+                let restStr = '';
+                for (let j = 0; j < data.length; j++) {
+                    if (i !== j) {
+                        restStr += data[j];
+                    }
+                }
+                // 如果沒有重複，就印出字串
+                if (!restStr.includes(middleChar)) {
+                    console.log(str);
+                    break;
+                }
+                // 如果全部的字串的第二個字都有重複，印出沒有
+                if (i === data.length - 1) {
+                    console.log('沒有');
+                }
+            }
+        }
+        func("彭大牆", "王明雅", "吳明"); // print 彭大牆
+        func("郭靜雅", "王立強", "林靜宜", "郭立恆", "林花花"); // print 林花花
+        func("郭宣雅", "林靜宜", "郭宣恆", "林靜花"); // print 沒有
+
+        console.log('------------------');
+
+        function getNumber(index) {
+            let odd = 3;
+            let even = 4;
+            let mergedSequence = [0];
+
+            for (let i = 0; i < 10; i++) {
+                if (i % 2 === 0) {
+                    mergedSequence.push(even);
+                    even += 3;
+                } else {
+                    mergedSequence.push(odd);
+                    odd += 3;
+                }
+            }
+            console.log(mergedSequence[index]);
+        }
+        getNumber(1); // print 4 
+        getNumber(5); // print 10 
+        getNumber(10); // print 15
+
+        console.log('------------------');
+
+
+    </script>
+</body>
+
+</html>
